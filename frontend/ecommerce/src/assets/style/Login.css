@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0c0c0e; }
+
+.login-wrap {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Jost', sans-serif;
+}
+
+
+.login-left {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+}
+
+.login-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(120, 80, 255, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 120, 80, 0.15) 0%, transparent 50%);
+}
+
+.login-orb {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 280px; height: 280px;
+  top: 10%; left: 15%;
+  background: radial-gradient(circle, rgba(120, 80, 255, 0.4), transparent);
+  animation-delay: 0s;
+}
+
+.orb2 {
+  width: 180px; height: 180px;
+  top: 50%; right: 10%;
+  background: radial-gradient(circle, rgba(255, 180, 80, 0.3), transparent);
+  animation-delay: -3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-20px) scale(1.05); }
+}
+
+.brand-tag {
+  position: absolute;
+  top: 2.5rem; left: 3rem;
+  z-index: 2;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.brand-tag span { color: #c9a84c; }
+
+.left-quote {
+  position: relative;
+  z-index: 2;
+  font-family: 'Cormorant Garamond', serif;
+  color: rgba(255, 255, 255, 0.9);
+}
+.left-quote h2 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.left-quote h2 span { color: #c9a84c; font-style: italic; }
+.left-quote p {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.9rem;
+  font-family: 'Jost', sans-serif;
+}
+
+
+.login-right {
+  width: 480px;
+  background: #0c0c0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.form-box { width: 100%; }
+
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  line-height: 1.1;
+}
+
+.form-sub {
+  color: #555;
+  font-size: 0.875rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+/* Fields */
+.field { margin-bottom: 1.5rem; position: relative; }
+
+.field label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #444;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+.field.active label { color: #c9a84c; }
+
+.field input {
+  width: 100%;
+  padding: 0.9rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #222;
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Jost', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.field input:focus  { border-color: #c9a84c; }
+.field input::placeholder { color: #333; }
+
+.field-line {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 1px;
+  background: #c9a84c;
+  width: 0;
+  transition: width 0.3s;
+}
+.field.active .field-line { width: 100%; }
+
+
+.alert {
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.alert.err { background: rgba(239,68,68,0.1);  color: #fca5a5; border: 1px solid rgba(239,68,68,0.2); }
+.alert.ok  { background: rgba(120,255,150,0.08); color: #86efac; border: 1px solid rgba(34,197,94,0.2); }
+
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #c9a84c;
+  color: #0c0c0e;
+  border: none;
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Jost', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+.submit-btn:hover  { background: #e0bc6a; transform: translateY(-1px); }
+.submit-btn:active { transform: translateY(0); }
+
+
+.switch-text {
+  margin-top: 1.75rem;
+  text-align: center;
+  color: #444;
+  font-size: 0.85rem;
+}
+.switch-text a { color: #c9a84c; cursor: pointer; text-decoration: none; }
+.switch-text a:hover { text-decoration: underline; }
+
+
+@media (max-width: 768px) {
+  .login-left  { display: none; }
+  .login-right { width: 100%; }
+}
